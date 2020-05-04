@@ -4,7 +4,7 @@ exports.up = function (knex) {
     table.string("desc").notNull();
     table.datetime("estimateAt");
     table.datetime("doneAt");
-    table.interger("userId").references("id").inTable("users").notNull();
+    table.integer("userId").references("id").inTable("users").notNull();
   });
 };
 
