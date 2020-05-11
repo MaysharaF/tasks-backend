@@ -1,6 +1,8 @@
-module.exports = (app) => {
-  app.post("/signup", app.api.user.save);
-  app.post("/signin", app.api.auth.signin);
+module.exports = async (app) => {
+  const save = app.api.user.save;
+  const signin = await app.api.auth.signin;
+  app.post("/signup", save);
+  app.post("/signin", signin);
 
   app
     .route("/tasks")
